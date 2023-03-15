@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    
+    "target": "ES2022",
+    
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    
+    "module": "CommonJS",
+
+    "esModuleInterop": true,
+   
+    "forceConsistentCasingInFileNames": true,
+
+    
+    "strict": false,
+
+    "strictPropertyInitialization": false,
+                    
+    "skipLibCheck": true,
+    "resolveJsonModule": true
+  },
+
+  "include": [
+    "src/**/*"
+  ]
+}
