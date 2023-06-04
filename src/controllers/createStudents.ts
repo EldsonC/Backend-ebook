@@ -1,12 +1,18 @@
+import { CreateStudentsService } from "../services/createData/createStudents";
 import { Request, Response } from "express";
-import { GetBookService } from "../services/getData/get-books";
 
-export class GetBookController {
+export class CreateStudentsController {
     async execute(request:Request, response:Response) {
         try {
-            const book = new GetBookService()
+            const {
+                name,  
+            } = request.body
 
-            const result = await book.getBook()
+            const students = new CreateStudentsService()
+
+            const result = await students.createStudents({
+                name,
+            })
 
             if (result instanceof Error) {
                 return response.status(400).json(result.message)

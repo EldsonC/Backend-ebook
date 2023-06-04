@@ -12,22 +12,13 @@ interface BookProps {
 
 export class CreateBookService {
     async createBook({
-        cover,
-        name,
-        author,
-        year,
-        pages,
-        category_id,
+        name
+        
     }:BookProps): Promise<Books | Error> {
         const repository = AppDataSource.getRepository(Books);
 
         const book = repository.create({
-            cover,
-            name,
-            author,
-            year,
-            pages,
-            category_id,
+            
         })
 
         await repository.save(book)

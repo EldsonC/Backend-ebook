@@ -76,11 +76,60 @@ export class books1678730686780 implements MigrationInterface {
                 ]
             }),
         )
+
+        await queryRunner.createTable(
+            new Table({
+                name: "students",
+                columns: [
+                    {
+                        name: "id",
+                        type: "varchar",
+                        isPrimary: true
+                    },
+                    {
+                        name: "name",
+                        type: "varchar"
+                    }
+                ]
+                
+            }),
+        )
+
+        await queryRunner.createTable(
+            new Table({
+                name: "booksget",
+                columns: [
+                    {
+                        name: "id",
+                        type: "varchar",
+                        isPrimary: true
+                    },
+                    {
+                        name: "name",
+                        type: "varchar"
+                    },
+                    {
+                        name: "student_id",
+                        type: "varchar"
+                    }
+                ],
+                foreignKeys: [
+                    {
+                        name: "fk_student",
+                        columnNames: ["student_id"],
+                        referencedTableName: "students",
+                        referencedColumnNames: ["id"]
+                    }
+                ]
+            }),
+        )
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropTable("categories")
         await queryRunner.dropTable("books")
+        await queryRunner.dropTable("students")
+        await queryRunner.dropTable("booksget")
     }
 
 }

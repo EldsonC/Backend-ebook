@@ -6,6 +6,8 @@ import { GetCategoriesController } from "../controllers/get-categories";
 
 import multer from "multer";
 import { uploadImage } from "../services/firebase";
+import { CreateStudentsController } from "../controllers/createStudents";
+import { CreateBooksGetController } from "../controllers/createBooksGet";
 
 const router = Router()
 
@@ -16,6 +18,8 @@ const Multer = multer({
 //create
 router.post("/create-book", Multer.single("image"), uploadImage, new CreateBookController().execute)
 router.post("/create-category", new CreateCategoryController().execute)
+router.post("/create-student", new CreateStudentsController().execute)
+router.post("/create-bookget", new CreateBooksGetController().execute)
 
 //get Data
 router.get("/get-books", new GetBookController().execute)
