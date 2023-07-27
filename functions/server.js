@@ -7,14 +7,14 @@ require("reflect-metadata");
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const routes_1 = require("../dist/routes/routes");
-const serverless = require("serverless-http");
 const app = (0, express_1.default)();
+const serverless = require("serverless-http");
 app.use((0, cors_1.default)());
 app.use(express_1.default.urlencoded({
-    extended: true,
+    extended: true
 }));
-app.use(express_1.default.json());
 
+app.use(express_1.default.json());
 app.use("/.netlify/functions/server", routes_1.router);
 
 module.exports = app

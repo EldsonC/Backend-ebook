@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/server.js",
+    "start": "node functions/server.js",
     "dev": "tsnd --transpile-only src/server.ts",
     "typeorm": "yarn typeorm-ts-node-commonjs",
     "runme": "yarn typeorm migration:run -d ./src/database/index.ts",
@@ -21,6 +21,7 @@
     "firebase-admin": "^11.5.0",
     "multer": "^1.4.5-lts.1",
     "mysql2": "^3.2.0",
+    "netlify": "^13.1.10",
     "pg": "^8.10.0",
     "reflect-metadata": "^0.1.13",
     "serverless-http": "^3.2.0",
