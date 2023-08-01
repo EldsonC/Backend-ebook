@@ -1,12 +1,12 @@
 import { DataSource } from "typeorm";
 
 export const AppDataSource = new DataSource({
-    type: 'postgres',
-    host: "db.xhadfebllisizvgirzhs.supabase.co",
-    port: 5432,
-    username: "postgres",
-    password: "EinsteinE13@@tes",
-    database: "postgres",
+    type: 'mysql',
+    host: "149.62.37.154",
+    port: 3306,
+    username: "u719074247_ebook",
+    password: "EinsteinE13@",
+    database: "u719074247_ebook",
     entities: [
         __dirname + "../../entities/*[.ts, .js]"
     ],
